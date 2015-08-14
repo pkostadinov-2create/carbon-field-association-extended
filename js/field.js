@@ -13,12 +13,10 @@ window.carbon = window.carbon || {};
 
 	// AssociationExtended MODEL
 	carbon.fields.Model.AssociationExtended = carbon.fields.Model.Relationship.extend({
-		defaults: {
-			classes: 'carbon-Relationship'
-		},
-
 		initialize: function() {
 			carbon.fields.Model.Relationship.prototype.initialize.apply(this);
+
+			this.addClass('carbon-Relationship carbon-Association');
 		}
 	});
 
@@ -51,7 +49,7 @@ window.carbon = window.carbon || {};
 		buildItemValue: function(id, type, subtype) {
 			var sep = ':';
 			return type + sep + subtype + sep + id;
-		}
+		},
 	});
 
 }(jQuery));
